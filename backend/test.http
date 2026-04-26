@@ -1,3 +1,4 @@
+### Login as admin
 POST http://localhost:3000/api/auth/login
 Content-Type: application/json
 
@@ -5,3 +6,7 @@ Content-Type: application/json
     "email": "admin@drx.com",
     "password": "Admin123!"
 }
+
+### Get all employees
+GET http://localhost:3000/api/employees
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6IkFsZXhhbmRydSBQb3Blc2N1IiwiZW1haWwiOiJhZG1pbkBkcnguY29tIiwicm9sZSI6IkFETUlOIiwiZGVwdCI6MSwiaWF0IjoxNzc3MjI1ODIxLCJleHAiOjE3NzcyNTQ2MjF9.YOU4MQ_nE4EhZD4xgqLY19RFWEY7JiO-H7tIji4CARs
