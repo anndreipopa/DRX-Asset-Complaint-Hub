@@ -1,10 +1,13 @@
 const jwt = require('jsonwebtoken');
 
 function verifyToken(req, res, next){
-    const authHeader = req.headers['authorization']; // Get Authorization header from request
-    const token = authHeader && authHeader.split(' ')[1]; // Extract token from Authorization header
+    // Get Authorization header from request
+    const authHeader = req.headers['authorization'];
+    // Extract token from Authorization header
+    const token = authHeader && authHeader.split(' ')[1];
     if(!token){
-        return res.status(401).json({message: 'No token provided'}); // Return 401 if no token is provided
+        // Return 401 if no token is provided
+        return res.status(401).json({message: 'No token provided'});
     }
     try{
         const decoded = jwt.verify(token, process.env.JWT_SECRET); // Verify token using secret key
