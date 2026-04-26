@@ -5,14 +5,17 @@ const express = require('express');
 //import cors
 const cors = require('cors');
 //import db connection from db/index.js
-const db = require('./src/db/index')
+const db = require('./src/db/index');
+
+//importing routes
+const authRoutes = require('./src/routes/auth');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
-
+app.use('/api/auth', authRoutes);
 //health check
 
 app.get('/health', async(req, res) =>{
