@@ -10,6 +10,7 @@ const db = require('./src/db/index');
 //importing routes
 const authRoutes = require('./src/routes/auth');
 const employeeRoutes = require('./src/routes/employee');
+const departmentRoutes = require('./src/routes/department');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -18,6 +19,7 @@ app.use(cors());
 app.use(express.json());
 app.use('/api/auth', authRoutes);
 app.use('/api/employees', employeeRoutes);
+app.use('/api/departments', departmentRoutes);
 //health check
 
 app.get('/health', async(req, res) =>{

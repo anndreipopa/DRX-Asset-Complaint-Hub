@@ -39,7 +39,7 @@ CREATE TABLE asset (
     asset_id        SERIAL PRIMARY KEY,
     model_id        INT             NOT NULL REFERENCES asset_model(model_id),
     serial_number   VARCHAR(100)    NOT NULL UNIQUE,
-    empl_id         INT             NOT NULL REFERENCES employee(empl_id),
+    empl_id         INT             REFERENCES employee(empl_id),
     is_active       BOOLEAN         NOT NULL DEFAULT TRUE,
     acquired_at     DATE            NOT NULL DEFAULT CURRENT_DATE
 );
