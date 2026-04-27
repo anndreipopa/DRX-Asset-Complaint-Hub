@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const db = require('../db/index');
-const { verifyToken, requireRole } = require('../middleware/authMidleware');
+const { verifyToken, requireRole } = require('../middleware/authMiddleware');
 const bcrypt = require('bcrypt');
 
 // Route to get all employess, admin only, requires valid JWT roken and checks if role = ADMIN
