@@ -112,7 +112,7 @@ router.post('/', verifyToken, requireRole(['ADMIN']), async (req, res) => {
         const password_hash = await bcrypt.hash(password, 10);
         const created = await db.query(
             'INSERT INTO employee (name, email, role, dept_id, is_active, password_hash) VALUES ($1, $2, $3, $4, $5) RETURNING empl_id, name, email, role, dept_id, is_active', 
-            [name, email, role, dept_id, TRUE, password_hash]
+            [name, email, role, dept_id, true, password_hash]
         );
         res.status(201).json(created.rows[0]);
     } catch(err) {
