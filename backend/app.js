@@ -16,7 +16,8 @@ app.use(express.json());
 
 app.use('/api/auth', require('./src/modules/auth/auth.routes'));
 app.use('/api/employees', require('./src/modules/employee/employee.routes'));
-//app.use('/api/departments', require('./src/modules/department/department.routes'));
+app.use('/api/departments', require('./src/modules/department/department.routes'));
+app.use('/api/assets', require('./src/modules/asset/asset.routes'));
 
 
 //health check

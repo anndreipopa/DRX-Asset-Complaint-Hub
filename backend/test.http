@@ -4,13 +4,17 @@ Content-Type: application/json
 
 {
     "email": "admin@drx.com",
-    "password": "Admin123!"
+    "password": "admin123!"
 }
 
 ### Get all employees
 GET http://localhost:3000/api/employees
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6IkFsZXhhbmRydSBQb3Blc2N1IiwiZW1haWwiOiJhZG1pbkBkcnguY29tIiwicm9sZSI6IkFETUlOIiwiZGVwdCI6MSwiaWF0IjoxNzc3NTY2NDIwLCJleHAiOjE3Nzc1OTUyMjB9.ZjKL0-ykhySXutwQBSZfloFIjQrsdYUvlZebl3SGd7g
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywibmFtZSI6IkFuYSBQYXZlbCIsImVtYWlsIjoidXNlcjJAZHJ4LmNvbSIsInJvbGUiOiJVU0VSIiwiZGVwdCI6MSwiaWF0IjoxNzc3NTcwOTc0LCJleHAiOjE3Nzc1OTk3NzR9.5ViKghA5jp0H-qoY8ku5DvHi3HKZ5vYBgOUUiIKgIMY
 
 ### Get all departments
 GET http://localhost:3000/api/departments
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6IkFsZXhhbmRydSBQb3Blc2N1IiwiZW1haWwiOiJhZG1pbkBkcnguY29tIiwicm9sZSI6IkFETUlOIiwiZGVwdCI6MSwiaWF0IjoxNzc3Mjk2NjYzLCJleHAiOjE3NzczMjU0NjN9.ax0-kCrYM6FEGyKbNQax5_SnDvnvXACFuczftpAdRvQ
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywibmFtZSI6IkFuYSBQYXZlbCIsImVtYWlsIjoidXNlcjJAZHJ4LmNvbSIsInJvbGUiOiJVU0VSIiwiZGVwdCI6MSwiaWF0IjoxNzc3NTcwOTc0LCJleHAiOjE3Nzc1OTk3NzR9.5ViKghA5jp0H-qoY8ku5DvHi3HKZ5vYBgOUUiIKgIMY
+
+### Get all assets
+GET http://localhost:3000/api/assets/my-assets
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywibmFtZSI6IkFuYSBQYXZlbCIsImVtYWlsIjoidXNlcjJAZHJ4LmNvbSIsInJvbGUiOiJVU0VSIiwiZGVwdCI6MSwiaWF0IjoxNzc3NTcwOTc0LCJleHAiOjE3Nzc1OTk3NzR9.5ViKghA5jp0H-qoY8ku5DvHi3HKZ5vYBgOUUiIKgIMY
