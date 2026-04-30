@@ -1,27 +1,25 @@
 require('dotenv').config();
 
-//import express
 const express = require('express');
-//import cors
 const cors = require('cors');
-//import db connection from db/index.js
 const db = require('./src/db/index');
 
-//importing routes
-const authRoutes = require('./src/routes/auth');
-const employeeRoutes = require('./src/routes/employee');
-const departmentRoutes = require('./src/routes/department');
+//global error handler import
+const errorHandler = require('./src/middleware/errorHandler.middleware');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
-app.use('/api/auth', authRoutes);
-app.use('/api/employees', employeeRoutes);
-app.use('/api/departments', departmentRoutes);
-//health check
 
+
+app.use('/api/auth', require('./src/modules/auth/auth.routes'));
+app.use('/api/employees', require('./src/modules/employee/employee.routes'));
+//app.use('/api/departments', require('./src/modules/department/department.routes'));
+
+
+//health check
 app.get('/health', async(req, res) =>{
     try {
         const result = await db.query('SELECT COUNT(*) FROM employee');
@@ -36,6 +34,8 @@ app.get('/health', async(req, res) =>{
         });
     }
 });
+
+app.use(errorHandler);
 
 //server start
 
