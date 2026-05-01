@@ -54,9 +54,12 @@ class AssetController {
             const updatedAsset = await assetService.updateAsset(req.params.id, req.body);
             res.json(updatedAsset);
         } catch (err) {
-            if (err.message === 'Asset not found.' || err.message === 'Serial number already in use by another asset.') {
-                return res.status(404).json({ message: err.message });
-            }
+            if (err.message === 'Asset not found.') {
+                 return res.status(404).json({ message: err.message });
+                }
+            if (err.message === 'Serial number already in use by another asset.') {
+                return res.status(400).json({ message: err.message });
+                }
             next(err);
         }
     };

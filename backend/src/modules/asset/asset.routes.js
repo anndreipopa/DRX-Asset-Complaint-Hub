@@ -6,7 +6,7 @@ const { verifyToken, requireRole } = require('../../middleware/auth.middleware')
 router.get('/my-assets', verifyToken, assetController.getMyAssets);
 
 // Admin gets all assets available
-router.get('/', verifyToken, requireRole(['ADMIN']), assetController.getAllAssets);
+router.get('/', verifyToken, requireRole(['ADMIN', 'TECHNICIAN', 'DEPT_RESPONSIBLE']), assetController.getAllAssets);
 
 // Gen an asset by its id, admin only
 router.get('/:id', verifyToken, requireRole(['ADMIN']), assetController.getAssetById);
